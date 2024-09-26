@@ -1,0 +1,85 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100vh;
+}
+
+.header,
+.globalMenu,
+.contextMenu,
+.mainContent,
+.adArea,
+.footer {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+}
+
+.header {
+  background-color: #4caf50;
+  color: white;
+}
+
+.globalMenu {
+  background-color: #333;
+  color: white;
+}
+
+.contextMenu {
+  background-color: #555;
+  color: white;
+}
+
+.mainContent {
+  background-color: #fafafa;
+  flex-grow: 1;
+}
+
+.adArea {
+  background-color: #ddd;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "menu-global main-content ad-area"
+      "menu-context main-content ad-area"
+      "footer footer footer";
+    grid-template-columns: 200px 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .globalMenu {
+    grid-area: menu-global;
+  }
+
+  .contextMenu {
+    grid-area: menu-context;
+  }
+
+  .mainContent {
+    grid-area: main-content;
+  }
+
+  .adArea {
+    grid-area: ad-area;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+}
